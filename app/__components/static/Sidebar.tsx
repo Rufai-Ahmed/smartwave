@@ -7,16 +7,14 @@ import { usePathname } from "next/navigation";
 import React, { FC } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 
-const Sidebar: FC<iSidebar> = ({ handleClick, state }) => {
+const Sidebar: FC<iSidebar> = () => {
   const path = usePathname();
 
   const isActive: (name: string) => boolean = (name: string) => name === path;
 
   return (
     <div
-      className={`w-[260px] hidden lg:block fixed h-screen duration-300 overflow-y-auto pb-5 bg-[#050505] ${
-        state ? "-left-[300px]" : "left-0"
-      }`}
+      className={`w-[260px] lg:block fixed h-screen duration-300 overflow-y-auto pb-5 left-0 hidden bg-[#050505]`}
     >
       <div className="w-full text-white h-[100px] flex items-center justify-center text-[24px] mb-4">
         Smartwave
