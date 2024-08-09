@@ -22,3 +22,8 @@
   border: 6px solid transparent;
   background-clip: content-box;
 }
+
+::selection {
+  background-color: blueviolet;
+  color: white;
+}
