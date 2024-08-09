@@ -1,5 +1,5 @@
 {
-  "name": "smart-wave",
+  "name": "smartwave",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "input-otp": "^1.2.4",
     "lucide-react": "^0.424.0",
     "next": "14.2.5",
     "react": "^18",
