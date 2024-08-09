@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Local from "next/font/local";
-import "./globals.css";
-import Sidebar from "./__components/static/Sidebar";
+import "../globals.css";
+import Sidebar from "../__components/static/Sidebar";
+import Layout from "./__components/Layout";
 
 const aeonik = Local({
   src: [
-    { path: "../public/assets/fonts/AeonikTRIAL-Bold.otf", weight: "700" },
+    { path: "../../public/assets/fonts/AeonikTRIAL-Bold.otf", weight: "700" },
     {
-      path: "../public/assets/fonts/AeonikTRIAL-Light.otf",
+      path: "../../public/assets/fonts/AeonikTRIAL-Light.otf",
       weight: "200",
     },
     {
-      path: "../public/assets/fonts/AeonikTRIAL-Regular.otf",
+      path: "../../public/assets/fonts/AeonikTRIAL-Regular.otf",
       weight: "400",
     },
   ],
@@ -29,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={aeonik.className}>{children}</body>
+      <body className={aeonik.className}>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }
