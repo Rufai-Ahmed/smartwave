@@ -13,7 +13,7 @@ const Sidebar: FC<iSidebar> = () => {
   const isActive: (name: string) => boolean = (name: string) => name === path;
 
   return (
-    <div
+    <aside
       className={`w-[260px] lg:block fixed h-screen duration-300 overflow-y-auto pb-5 left-0 hidden bg-[#050505]`}
     >
       <div className="w-full text-white h-[100px] flex items-center justify-center text-[24px] mb-4">
@@ -39,7 +39,7 @@ const Sidebar: FC<iSidebar> = () => {
           </Link>
         ))}
       </div>
-    </div>
+    </aside>
   );
 };
 
