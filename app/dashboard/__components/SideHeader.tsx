@@ -90,7 +90,7 @@ const SideHeader = () => {
 
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <div className="flex items-center gap-2 cursor-pointer md:gap-5">
+          <div className="flex items-center z-50 gap-2 cursor-pointer md:gap-5">
             <Image
               src={"/assets/images/avatar.png"}
               width={100}
@@ -110,7 +110,7 @@ const SideHeader = () => {
             <FaAngleDown size={18} />
           </div>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-44 p-2 rounded-[10px] bg-[#191919]">
+        <DropdownMenuContent className="w-44 p-2 rounded-[10px] z-20 bg-[#191919]">
           <DropdownMenuGroup>
             {dropData.map((el: iDropdown, i: number) => (
               <DropdownMenuItem

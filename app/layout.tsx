@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={aeonik.className}>{children}</body>
+      <body className={`${aeonik.className} bg-[#0C0C0C]`}>{children}</body>
     </html>
   );
 }
