@@ -1,6 +1,5 @@
 import Button from "@/app/__components/Button";
 import { benefitsData } from "@/lib/data/data";
-import { Star, StarIcon } from "lucide-react";
 import Image from "next/image";
 import { BsStarFill } from "react-icons/bs";
 import React from "react";
