@@ -1,5 +1,7 @@
 "use client";
+import Button from "@/app/__components/Button";
 import Sidebar from "@/app/__components/static/Sidebar";
+import { DropdownMenuShortcut } from "@/components/ui/dropdown-menu";
 import {
   Sheet,
   SheetContent,
@@ -8,13 +10,27 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { iSidebar } from "@/interfaces";
-import { sidebarData } from "@/lib/data/data";
+import { iDropdown, iSidebar } from "@/interfaces";
+import { dropData, sidebarData } from "@/lib/data/data";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuPortal,
+  DropdownMenuSubContent,
+} from "@radix-ui/react-dropdown-menu";
 import { Menu, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { BsPerson } from "react-icons/bs";
 import { FaAngleDown } from "react-icons/fa6";
 
 const SideHeader = () => {
@@ -72,25 +88,42 @@ const SideHeader = () => {
         />
       </div>
 
-      <div className="flex items-center gap-2 md:gap-5">
-        <Image
-          src={"/assets/images/avatar.png"}
-          width={100}
-          height={100}
-          unoptimized
-          alt="User's avatar"
-          className="size-10 md:size-14 object-center object-cover rounded-full border-[2px] border-[#9969C2]"
-        />
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <div className="flex items-center gap-2 cursor-pointer md:gap-5">
+            <Image
+              src={"/assets/images/avatar.png"}
+              width={100}
+              height={100}
+              unoptimized
+              alt="User's avatar"
+              className="size-10 md:size-11 object-center object-cover rounded-full border-[2px] border-[#9969C2]"
+            />
 
-        <div className="space-y- hidden md:block">
-          <p>
-            <b>Mike Dean</b>
-          </p>
-          <p className="font-light">Vendor</p>
-        </div>
+            <div className="space-y- text-[14px] hidden md:block">
+              <p>
+                <b>Mike Dean</b>
+              </p>
+              <p className="font-light">Vendor</p>
+            </div>
 
-        <FaAngleDown size={18} />
-      </div>
+            <FaAngleDown size={18} />
+          </div>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="w-44 p-2 rounded-[10px] bg-[#191919]">
+          <DropdownMenuGroup>
+            {dropData.map((el: iDropdown, i: number) => (
+              <DropdownMenuItem
+                key={i}
+                className="flex items-center py-2 px-2 cursor-pointer text-[14px] font-light hover:bg-[#6E18BB]  rounded-[10px] duration-300 gap-3"
+              >
+                {el.icon}
+                {el.label}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </header>
   );
 };

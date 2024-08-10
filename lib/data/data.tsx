@@ -1,6 +1,14 @@
-import { iInput, iSidebar } from "@/interfaces";
-import { Download, Gamepad2, Home, LogOut, Settings } from "lucide-react";
-import { BsBag, BsQuestionCircle } from "react-icons/bs";
+import { iDropdown, iInput, iSidebar } from "@/interfaces";
+import {
+  Download,
+  Gamepad2,
+  Home,
+  LogIn,
+  LogOut,
+  LogOutIcon,
+  Settings,
+} from "lucide-react";
+import { BsBag, BsPerson, BsQuestionCircle } from "react-icons/bs";
 import { FaRegCircle, FaTrademark } from "react-icons/fa6";
 import { FcRegisteredTrademark } from "react-icons/fc";
 import { GrTransaction } from "react-icons/gr";
@@ -117,5 +125,24 @@ export const sidebarData: iSidebar[] = [
     path: "/dashboard/logout",
     icon: <LogOut size={18} />,
     name: "logout",
+  },
+];
+
+export const dropData: iDropdown[] = [
+  {
+    icon: <BsPerson size={18} />,
+    label: "My Profile",
+  },
+  {
+    icon: <GrTransaction size={18} />,
+    label: "Transactions",
+  },
+  {
+    icon: <LogIn size={18} />,
+    label: "Sign in as vendor",
+  },
+  {
+    icon: <LogOutIcon size={18} />,
+    label: "Logout",
   },
 ];

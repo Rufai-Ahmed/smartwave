@@ -21,3 +21,8 @@ export interface iSidebar {
   icon?: ReactNode;
   drop?: boolean | {};
 }
+
+export interface iDropdown {
+  icon?: ReactNode;
+  label?: string;
+}
