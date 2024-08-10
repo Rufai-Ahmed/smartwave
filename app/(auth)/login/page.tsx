@@ -3,7 +3,6 @@ import Button from "@/app/__components/Button";
 import Input from "@/app/__components/Input";
 import { iInput } from "@/interfaces";
 import { loginInput } from "@/lib/data/data";
-import { Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
