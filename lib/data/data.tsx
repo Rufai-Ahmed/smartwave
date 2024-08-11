@@ -196,7 +196,7 @@ export const headingData: iHeading[] = [
     ),
   },
   {
-    path: `/dashboard/marketplace/${Number()}`,
+    path: `/dashboard/marketplace/0`,
     b: "Product Details",
     p: "All you need to know about the product",
   },

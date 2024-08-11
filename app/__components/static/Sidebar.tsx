@@ -14,8 +14,6 @@ const Sidebar: FC<iSidebar> = () => {
     const normalizedPath = path.replace("/dashboard", "").split("/")[1];
     const normalizedName = name.replace("/dashboard", "").split("/")[1];
 
-    console.log(normalizedName, normalizedPath);
-
     return normalizedPath === normalizedName;
   };
 
