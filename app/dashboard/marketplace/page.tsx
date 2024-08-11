@@ -9,6 +9,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import PaginationPage from "./Pagination";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -32,38 +33,12 @@ const Page = () => {
         ))}
       </div>
 
-      <Pagination>
-        <PaginationContent>
-          <PaginationItem>
-            {currentPage > 1 && (
-              <PaginationPrevious
-                onClick={() =>
-                  handlePageChange(currentPage !== 1 ? currentPage - 1 : 1)
-                }
-              />
-            )}
-          </PaginationItem>
-          {Array.from({ length: Math.ceil(items.length / ITEMS_PER_PAGE) }).map(
-            (_: unknown, i: number) => (
-              <PaginationItem key={i}>
-                <PaginationLink
-                  isActive={currentPage === i + 1}
-                  onClick={() => handlePageChange(i + 1)}
-                >
-                  {i + 1}
-                </PaginationLink>
-              </PaginationItem>
-            )
-          )}
-          {Math.ceil(items.length / ITEMS_PER_PAGE) > currentPage && (
-            <PaginationItem>
-              <PaginationNext
-                onClick={() => handlePageChange(currentPage + 1)}
-              />
-            </PaginationItem>
-          )}
-        </PaginationContent>
-      </Pagination>
+      <PaginationPage
+        currentPage={currentPage}
+        handlePageChange={handlePageChange}
+        items={items}
+        itemsPerPage={ITEMS_PER_PAGE}
+      />
     </section>
   );
 };
