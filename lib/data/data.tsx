@@ -1,7 +1,16 @@
-import { iDropdown, iInput, iSidebar } from "@/interfaces";
+import Button from "@/app/__components/Button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { iDropdown, iHeading, iInput, iSidebar } from "@/interfaces";
 import {
   Download,
   Gamepad2,
+  Hand,
   Home,
   LogIn,
   LogOut,
@@ -9,7 +18,7 @@ import {
   Settings,
 } from "lucide-react";
 import { BsBag, BsPerson, BsQuestionCircle } from "react-icons/bs";
-import { FaRegCircle, FaTrademark } from "react-icons/fa6";
+import { FaAngleDown, FaRegCircle, FaTrademark } from "react-icons/fa6";
 import { FcRegisteredTrademark } from "react-icons/fc";
 import { GrTransaction } from "react-icons/gr";
 import { MdGroups } from "react-icons/md";
@@ -144,5 +153,46 @@ export const dropData: iDropdown[] = [
   {
     icon: <LogOutIcon size={18} />,
     label: "Logout",
+  },
+];
+
+export const headingData: iHeading[] = [
+  {
+    path: "/dashboard",
+    b: "Overview",
+    p: "Winners Mike",
+    rightComp: (
+      <div className="px-4 font-light py-2 bg-[#191919] flex items-center gap-3 rounded-md cursor-pointer">
+        <Hand size={18} />
+
+        <p className="hidden md:block">View in Light Mode</p>
+      </div>
+    ),
+  },
+  {
+    path: "/dashboard/marketplace",
+    b: "Marketplace",
+    p: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    rightComp: (
+      <DropdownMenu>
+        <div className="flex items-center gap-4">
+          {Array.from({ length: 2 }).map((el: unknown, i: number) => (
+            <DropdownMenuTrigger key={i}>
+              <Button className="bg-[#191919] text-[17px] md:text-[17px] md:h-auto py-2 w-full md:w-full px-4 gap-3 2xl:w-full">
+                Lorem, ipsum.
+                <FaAngleDown size={17} />
+              </Button>
+            </DropdownMenuTrigger>
+          ))}
+          <DropdownMenuContent className="w-44 p-2 rounded-[10px] z-20 bg-[#191919]">
+            <DropdownMenuGroup>
+              <DropdownMenuItem className="flex items-center py-2 px-2 cursor-pointer text-[14px] font-light hover:bg-[#6E18BB]  rounded-[10px] duration-300 gap-3">
+                el.iconel.label&quot;
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </div>
+      </DropdownMenu>
+    ),
   },
 ];
