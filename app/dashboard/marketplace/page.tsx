@@ -26,7 +26,7 @@ const Page = () => {
 
   return (
     <section>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid lg:grid-cols-3 grid-cols-4 xl:col-span-4 gap-5">
         {currentItems.map((_, i) => (
           <BestSelling key={i} />
         ))}

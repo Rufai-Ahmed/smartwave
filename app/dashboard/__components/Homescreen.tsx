@@ -69,9 +69,12 @@ const Homescreen = () => {
       </div>
       <div className="grid mt-5 items-end grid-cols-1 gap-5 lg:grid-cols-3">
         <QuickAction />
-        <div className="col-span-3 xl:col-span-2 gap-4 items-end grid grid-cols-4 xl:grid-cols-2">
-          <BestSelling heading={true} />
-          <BestSelling />
+        <div className="col-span-3 xl:col-span-2 gap-4 items-end grid grid-cols-4 lg:grid-cols-2">
+          <BestSelling
+            className="xl:col-span-1 md:col-span-2 col-span-4"
+            heading={true}
+          />
+          <BestSelling className="xl:col-span-1 md:col-span-2 col-span-4" />
         </div>
       </div>
     </section>
