@@ -26,3 +26,10 @@ export interface iDropdown {
   icon?: ReactNode;
   label?: string;
 }
+
+export interface iHeading {
+  path: string;
+  b: string;
+  p: string;
+  rightComp: React.JSX.Element;
+}

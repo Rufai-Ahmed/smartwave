@@ -10,23 +10,8 @@ import BestSelling from "./BestSelling";
 
 const Homescreen = () => {
   return (
-    <section className="w-full p-8">
-      <div className="flex items-center justify-between">
-        <div className="text-[18px]">
-          <p>
-            <b>Overview</b>
-          </p>
-          <p className="font-light">Winners Mike</p>
-        </div>
-
-        <div className="px-4 font-light py-2 bg-[#191919] flex items-center gap-3 rounded-md cursor-pointer">
-          <Hand size={18} />
-
-          <p className="hidden md:block">View in Light Mode</p>
-        </div>
-      </div>
-
-      <div className="w-full grid mt-5 text-white grid-cols-12 gap-5">
+    <section className="w-full">
+      <div className="w-full grid text-white grid-cols-12 gap-5">
         <div className="min-h-[270px] bg-[#6E18BB] rounded-[20px] xl:col-span-4 col-span-12 p-5 flex flex-col justify-center overflow-hidden relative">
           <div className="absolute rounded-full size-96 scale-110 -left-24 bg-[#a567da]" />
 
@@ -84,9 +69,12 @@ const Homescreen = () => {
       </div>
       <div className="grid mt-5 items-end grid-cols-1 gap-5 lg:grid-cols-3">
         <QuickAction />
-        <div className="col-span-3 xl:col-span-2 gap-4 items-end grid grid-cols-4 xl:grid-cols-2">
-          <BestSelling heading={true} />
-          <BestSelling />
+        <div className="col-span-3 xl:col-span-2 gap-4 items-end grid grid-cols-4 lg:grid-cols-2">
+          <BestSelling
+            className="xl:col-span-1 md:col-span-2 col-span-4"
+            heading={true}
+          />
+          <BestSelling className="xl:col-span-1 md:col-span-2 col-span-4" />
         </div>
       </div>
     </section>
