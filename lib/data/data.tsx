@@ -6,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { iDropdown, iHeading, iInput, iSidebar } from "@/interfaces";
+import { iDropdown, iHeading, iInput, iProduct, iSidebar } from "@/interfaces";
 import {
   Download,
   Gamepad2,
@@ -195,4 +195,20 @@ export const headingData: iHeading[] = [
       </DropdownMenu>
     ),
   },
+  {
+    path: `/dashboard/marketplace/${Number()}`,
+    b: "Product Details",
+    p: "All you need to know about the product",
+  },
 ];
+
+export const mainObject: iProduct = {
+  img: "/assets/images/diff_winter.jpg",
+  name: "Different Winter",
+  short: "Unknown Short",
+  underShort: "Lorem ipsum dolor sit.",
+  desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus dolor, nostrum ratione voluptatum debitis id quibusdam quam esse? Nam provident eaque ad. Ullam recusandae provident fuga fugiat dolores odit expedita deserunt similique facere eveniet magnam labore, debitis sequi placeat, ipsam sapiente architecto eos consequuntur veritatis inventore. Laudantium eum possimus pariatur?",
+  price: "N10,000",
+  commission: "N1,000",
+  star: 4,
+};

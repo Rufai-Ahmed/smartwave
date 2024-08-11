@@ -6,12 +6,13 @@ import {
   PaginationNext,
   Pagination,
 } from "@/components/ui/pagination";
+import { iProduct } from "@/interfaces";
 import React, { FC } from "react";
 
 export interface iPagination {
   handlePageChange?: (page: number) => void | undefined;
   currentPage?: number | undefined;
-  items?: unknown[] | undefined;
+  items?: iProduct[] | undefined;
   itemsPerPage?: number | undefined;
 }
 
