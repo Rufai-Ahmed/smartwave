@@ -10,7 +10,14 @@ import { FaAngleDown } from "react-icons/fa6";
 const Sidebar: FC<iSidebar> = () => {
   const path = usePathname();
 
-  const isActive: (name: string) => boolean = (name: string) => name === path;
+  const isActive: (name: string) => boolean = (name: string) => {
+    const normalizedPath = path.replace("/dashboard", "").split("/")[1];
+    const normalizedName = name.replace("/dashboard", "").split("/")[1];
+
+    console.log(normalizedName, normalizedPath);
+
+    return normalizedPath === normalizedName;
+  };
 
   return (
     <aside

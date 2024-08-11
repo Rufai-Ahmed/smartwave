@@ -1,7 +1,6 @@
 "use client";
 import { iHeading } from "@/interfaces";
 import { headingData } from "@/lib/data/data";
-import { Hand } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React from "react";
 
