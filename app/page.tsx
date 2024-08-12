@@ -16,7 +16,7 @@ const page = () => {
         unoptimized
       />
 
-      <div className="min-h-screen text-center col-span-2 lg:col-span-1 py-[10%] flex flex-col justify-between items-center">
+      <div className="h-screen text-center col-span-2 lg:col-span-1 py-[10%] flex flex-col space-y-2 lg:space-y-0 justify-between items-center">
         <div className="flex flex-col space-y-5 md:space-y-0 items-center">
           <div className="flex items-center gap-3">
             <Image
@@ -32,13 +32,23 @@ const page = () => {
             </p>
           </div>
 
-          <p className="text-[24px] w-[90%] md:w-auto text-center">
+          <p className="text-[20px] md:text-[24px] w-[90%] md:w-auto text-center">
             Unlock your earning potential with Smartwave.
             <br className="hidden md:block" /> The Ultimate Earning Portal
           </p>
         </div>
 
-        <div className="space-y-3 w-full flex flex-col items-center text-[24px]">
+        <Image
+          className="lg:hidden w-full object-cover"
+          src={"/assets/images/money_girl.jpg"}
+          width={100}
+          height={100}
+          draggable={false}
+          alt="Girl with cash"
+          unoptimized
+        />
+
+        <div className="space-y-3 w-full flex flex-col items-center text-[20px] pb-2 md:pb-0 md:text-[24px]">
           <p>
             Don&apos;t have an account? <br className="md:hidden" />{" "}
             <Link href={"/register"} className="text-[#8C29E4]">
@@ -49,7 +59,10 @@ const page = () => {
           <p>Or</p>
 
           <Link href={"/login"} className="w-full flex justify-center">
-            <Button> Sign in into an existing account</Button>
+            <Button className="text-[18px]">
+              {" "}
+              Sign in into an existing account
+            </Button>
           </Link>
         </div>
       </div>
