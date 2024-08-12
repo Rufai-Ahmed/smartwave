@@ -23,6 +23,8 @@ import { GrTransaction } from "react-icons/gr";
 import { MdGroups } from "react-icons/md";
 import { PiTrademarkRegisteredLight } from "react-icons/pi";
 
+export const items: any[] = Array(20).fill(mainObject);
+
 export const loginInput: iInput[] = [
   {
     label: "Email Address",
