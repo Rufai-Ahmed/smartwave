@@ -3,12 +3,12 @@ import { iProduct } from "@/interfaces";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { useParams } from "next/navigation";
 import React from "react";
-import { items } from "../page";
 import Image from "next/image";
 import { Star } from "lucide-react";
 import { BsStarFill } from "react-icons/bs";
 import Button from "@/app/__components/Button";
 import Link from "next/link";
+import { items } from "@/lib/data/data";
 
 const Page = () => {
   const { id }: Params = useParams();
