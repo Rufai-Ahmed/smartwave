@@ -4,10 +4,9 @@ import BestSelling from "../__components/BestSelling";
 import PaginationPage from "./__components/Pagination";
 import Link from "next/link";
 import { iProduct } from "@/interfaces";
-import { mainObject } from "@/lib/data/data";
+import { items } from "@/lib/data/data";
 
 const ITEMS_PER_PAGE = 6;
-export const items: any[] = Array(20).fill(mainObject);
 
 const Page = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
