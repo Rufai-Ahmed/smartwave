@@ -55,7 +55,10 @@ const Page = () => {
           </div>
 
           <div className="space-y-3 w-full flex flex-col items-center text-[24px]">
-            <Link href={"/login"} className="w-full mb-4 flex justify-center">
+            <Link
+              href={"/dashboard"}
+              className="w-full mb-4 flex justify-center"
+            >
               <Button className="w-full md:w-full lg:w-full 2xl:w-full">
                 {" "}
                 Login
@@ -65,7 +68,7 @@ const Page = () => {
               <Link href={"/register"}>
                 Don&apos;t have an account?
                 <br className="md:hidden" />
-                <span className="text-[#8C29E4]">Create an account</span>{" "}
+                <span className="text-[#8C29E4]"> Create an account</span>{" "}
               </Link>
             </p>
           </div>

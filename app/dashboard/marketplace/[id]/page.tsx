@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Star } from "lucide-react";
 import { BsStarFill } from "react-icons/bs";
 import Button from "@/app/__components/Button";
+import Link from "next/link";
 
 const Page = () => {
   const { id }: Params = useParams();
@@ -58,9 +59,11 @@ const Page = () => {
         </p>
 
         <div className="grid gap-2 grid-cols-2">
-          <Button className=" text-[14px] md:text-[14px] h-auto md:h-auto w-full 2xl:w-full md:w-full">
-            Buy Product
-          </Button>
+          <Link href={`${id}/buy`}>
+            <Button className=" text-[14px] md:text-[14px] h-auto md:h-auto w-full 2xl:w-full md:w-full">
+              Buy Product
+            </Button>
+          </Link>
           <Button className="bg-transparent text-[14px] md:text-[15px] h-auto hover:bg-zinc-950 duration-300 md:h-auto w-full 2xl:w-full md:w-full">
             Lorem, ipsum.
           </Button>

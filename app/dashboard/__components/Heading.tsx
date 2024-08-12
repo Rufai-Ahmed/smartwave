@@ -19,15 +19,19 @@ const Heading = () => {
   });
 
   return (
-    <div className="flex p-8 items-center justify-between">
-      <div className="text-[18px]">
-        <p>
-          <b>{mainData?.b}</b>
-        </p>
-        <p className="font-light">{mainData?.p}</p>
-      </div>
+    <div>
+      {mainData && (
+        <div className="flex p-8 items-center justify-between">
+          <div className="text-[18px]">
+            <p>
+              <b>{mainData?.b}</b>
+            </p>
+            <p className="font-light">{mainData?.p}</p>
+          </div>
 
-      {mainData?.rightComp}
+          {mainData?.rightComp}
+        </div>
+      )}
     </div>
   );
 };
