@@ -26,7 +26,7 @@ const Page = () => {
       <div className="grid lg:grid-cols-3 grid-cols-4 xl:col-span-4 gap-5">
         {currentItems.map((_: iProduct, i: number) => (
           <Link key={i} href={`marketplace/${i}`}>
-            <BestSelling />
+            <BestSelling className="col-span-4 lg:col-span-1 " />
           </Link>
         ))}
       </div>

@@ -202,7 +202,7 @@ export const headingData: iHeading[] = [
     p: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     rightComp: (
       <DropdownMenu>
-        <div className="flex items-center gap-4">
+        <div className="md:flex hidden items-center gap-4">
           {Array.from({ length: 2 }).map((el: unknown, i: number) => (
             <DropdownMenuTrigger key={i}>
               <Button className="bg-[#191919] text-[17px] md:text-[17px] md:h-auto py-2 w-full md:w-full px-4 gap-3 2xl:w-full">
