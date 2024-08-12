@@ -2,6 +2,7 @@
 import { iInput } from "@/interfaces";
 import { Eye, EyeOff } from "lucide-react";
 import React, { FC, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const Input: FC<iInput> = ({
   label,
@@ -9,6 +10,7 @@ const Input: FC<iInput> = ({
   placeholder,
   bottomAction,
   type,
+  className,
 }) => {
   const [state, setState] = useState<boolean>(true);
   const handleToggleShow = () => setState(!state);
@@ -21,7 +23,10 @@ const Input: FC<iInput> = ({
           type={name === "password" && !state ? "text" : type}
           name={name}
           placeholder={placeholder}
-          className="bg-transparent flex-grow outline-none pl-5 placeholder:text-[#D9D9D9] h-[60px] md:h-[90px]"
+          className={twMerge(
+            "bg-transparent flex-grow outline-none pl-5 placeholder:text-[#D9D9D9] h-[60px] md:h-[70px]",
+            className
+          )}
         />
 
         {name === "password" && !state ? (

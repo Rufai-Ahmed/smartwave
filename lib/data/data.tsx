@@ -18,8 +18,7 @@ import {
   Settings,
 } from "lucide-react";
 import { BsBag, BsPerson, BsQuestionCircle } from "react-icons/bs";
-import { FaAngleDown, FaRegCircle, FaTrademark } from "react-icons/fa6";
-import { FcRegisteredTrademark } from "react-icons/fc";
+import { FaAngleDown } from "react-icons/fa6";
 import { GrTransaction } from "react-icons/gr";
 import { MdGroups } from "react-icons/md";
 import { PiTrademarkRegisteredLight } from "react-icons/pi";
@@ -40,6 +39,34 @@ export const loginInput: iInput[] = [
     bottomAction: "Forgot Password",
   },
 ];
+
+export const buyInput: iInput[] = [
+  {
+    label: "Name",
+    placeholder: "Mike Chess",
+    name: "name",
+    type: "text",
+  },
+  {
+    label: "Phone Number",
+    placeholder: "08084845119",
+    name: "number",
+    type: "text",
+  },
+  {
+    label: "Email Address",
+    placeholder: "user@gmail.com",
+    name: "email",
+    type: "email",
+  },
+  {
+    label: "Quantity",
+    placeholder: "2",
+    name: "quantity",
+    type: "number",
+  },
+];
+
 export const registerInput: iInput[] = [
   {
     label: "Full Name",
