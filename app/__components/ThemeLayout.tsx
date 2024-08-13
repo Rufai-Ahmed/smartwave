@@ -9,6 +9,7 @@ const ThemeLayout: FC<PropsWithChildren> = ({ children }) => {
     const storedTheme = localStorage.getItem("theme");
     const initialTheme = storedTheme ? JSON.parse(storedTheme) : "dark";
     setTheme(initialTheme);
+    !initialTheme && localStorage.setItem("theme", JSON.stringify("dark"))
     document.documentElement.className = initialTheme; 
     setLoading(false);
   }, []);
