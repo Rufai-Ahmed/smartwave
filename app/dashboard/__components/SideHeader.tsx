@@ -1,8 +1,10 @@
 "use client";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -24,17 +26,15 @@ import React, { useEffect, useState } from "react";
 import { BsPerson } from "react-icons/bs";
 import { FaAngleDown } from "react-icons/fa6";
 
-
-
 const SideHeader: React.FC<SideHeaderProps> = ({ theme, setTheme }) => {
   const path = usePathname();
   const isActive: (name: string) => boolean = (name: string) => name === path;
 
-    const changeTheme = () => {
-      const newTheme = theme === "light" ? "dark" : "light";
-      setTheme(newTheme);
-      localStorage.setItem("theme", JSON.stringify(newTheme));
-    };
+  const changeTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", JSON.stringify(newTheme));
+  };
 
   return (
     <header className="h-[60px] sticky top-0 bg-white z-30 dark:bg-[#0C0C0C] md:h-[90px] px-8 w-full border-b-[1px] dark:border-b-[2px] dark:border-[rgb(35,35,35)] border-gray-500 flex items-center justify-between">
@@ -55,25 +55,26 @@ const SideHeader: React.FC<SideHeaderProps> = ({ theme, setTheme }) => {
               <SheetDescription></SheetDescription>
             </SheetHeader>
 
-            <div className="space-y-3 w-full">
-              {sidebarData.map((el: iSidebar, i: number) => (
-                <Link
-                  href={el.path!}
-                  key={i}
-                  className={`w-full  relative flex items-center font-light pl-8 text-[15px] cursor-pointer duration-300 gap-4 h-[50px] ${
-                    isActive(el.path!)
-                      ? "bg-[#6E18BB] text-white"
-                      : "dark:text-[#B5B5B5] text-black hover:text-white hover:bg-[#6E18BB]"
-                  }`}
-                >
-                  {isActive(el.path!) && (
-                    <div className="absolute w-2 rounded-r-lg bg-[#F29F05] h-full left-0" />
-                  )}
-                  {el.icon} <p className="capitalize">{el.name}</p>
-                  {el.drop && <FaAngleDown size={15} />}
-                </Link>
+            <SheetFooter className="space-y-3 w-full">
+              {sidebarData.reverse().map((el: iSidebar, i: number) => (
+                <SheetClose key={i} className="w-full" asChild>
+                  <Link
+                    href={el.path!}
+                    className={`w-full  relative flex items-center font-light pl-8 text-[15px] cursor-pointer duration-300 gap-4 h-[50px] ${
+                      isActive(el.path!)
+                        ? "bg-[#6E18BB] text-white"
+                        : "dark:text-[#B5B5B5] text-black hover:text-white hover:bg-[#6E18BB]"
+                    }`}
+                  >
+                    {isActive(el.path!) && (
+                      <div className="absolute w-2 rounded-r-lg bg-[#F29F05] h-full left-0" />
+                    )}
+                    {el.icon} <p className="capitalize">{el.name}</p>
+                    {el.drop && <FaAngleDown size={15} />}
+                  </Link>
+                </SheetClose>
               ))}
-            </div>
+            </SheetFooter>
           </SheetContent>
         </Sheet>
       </div>
@@ -127,11 +128,7 @@ const SideHeader: React.FC<SideHeaderProps> = ({ theme, setTheme }) => {
               onClick={changeTheme}
               className="flex items-center py-2 px-2 cursor-pointer text-[14px] font-light hover:bg-[#6E18BB]  rounded-[10px] duration-300 gap-3"
             >
-              {theme === "light" ? (
-                <Moon size={17} />
-              ) : (
-                <Sun size={17} />
-              )}
+              {theme === "light" ? <Moon size={17} /> : <Sun size={17} />}
               Switch Mode
             </DropdownMenuItem>
           </DropdownMenuGroup>
