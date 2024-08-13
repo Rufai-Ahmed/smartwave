@@ -16,12 +16,12 @@ const Page = () => {
       <div className="flex py-5 items-center gap-3">
         <div
           onClick={goBack}
-          className="bg-[#191919] text-white rounded-md flex items-center p-4 cursor-pointer justify-center"
+          className="dark:bg-[#191919] bg-gray-200 text-black dark:text-white rounded-md flex items-center p-4 cursor-pointer justify-center"
         >
           <FaAngleLeft size={18} />
         </div>
 
-        <div className="text-[18px]">
+        <div className="text-[18px] text-black dark:text-gray-100">
           <p>
             <b>Order Details</b>
           </p>
@@ -29,7 +29,7 @@ const Page = () => {
         </div>
       </div>
 
-      <form className="md:w-[450px] bg-black p-4 rounded-md">
+      <form className="md:w-[450px] bg-gray-100 dark:bg-black p-4 rounded-md">
         <div className="space-y-7 text-start">
           {buyInput.map((el: iInput, i: number) => (
             <Input className="h-[40px] md:h-[50px]" {...el} key={i} />
