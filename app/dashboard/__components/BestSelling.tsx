@@ -11,7 +11,7 @@ const BestSelling: FC<{ heading?: boolean; className?: string }> = ({
   return (
     <div
       className={twMerge(
-        "col-span-4 sm:col-span-2 lg:col-span-1 cursor-pointer xl:col-span-1",
+        "col-span-4 sm:col-span-2 text-black dark:text-gray-200 lg:col-span-1 cursor-pointer xl:col-span-1",
         className
       )}
       {...props}
