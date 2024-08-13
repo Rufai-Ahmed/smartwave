@@ -21,7 +21,7 @@ const Heading = () => {
   return (
     <div>
       {mainData && (
-        <div className="flex p-8 items-center justify-between">
+        <div className="flex text-black p-8 items-center justify-between dark:text-[#F2F2F2]">
           <div className="text-[18px]">
             <p>
               <b>{mainData?.b}</b>
