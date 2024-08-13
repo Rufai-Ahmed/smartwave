@@ -47,11 +47,14 @@ const SideHeader = () => {
   }, []);
 
   return (
-    <header className="h-[60px] md:h-[90px] px-8 w-full border-b-[2px] border-[rgb(35,35,35)] dark:border-gray-500 flex items-center justify-between">
+    <header className="h-[60px] md:h-[90px] px-8 w-full border-b-[1px] dark:border-b-[2px] dark:border-[rgb(35,35,35)] border-gray-500 flex items-center justify-between">
       <div className="lg:hidden flex items-center">
         <Sheet>
           <SheetTrigger asChild>
-            <Menu size={25} className="lg:hidden" />
+            <Menu
+              size={25}
+              className="lg:hidden text-black dark:text-gray-200"
+            />
           </SheetTrigger>
           <SheetContent
             className="text-[#c0bcbc] overflow-y-auto"
@@ -70,7 +73,7 @@ const SideHeader = () => {
                   className={`w-full  relative flex items-center font-light pl-8 text-[15px] cursor-pointer duration-300 gap-4 h-[50px] ${
                     isActive(el.path!)
                       ? "bg-[#6E18BB] text-white"
-                      : "text-[#B5B5B5] hover:text-white hover:bg-[#6E18BB]"
+                      : "dark:text-[#B5B5B5] text-black hover:text-white hover:bg-[#6E18BB]"
                   }`}
                 >
                   {isActive(el.path!) && (
@@ -85,7 +88,7 @@ const SideHeader = () => {
         </Sheet>
       </div>
 
-      <div className="sm:flex items-center gap-3 px-3 h-[45px] hidden  md:w-[400px] bg-[#191919] rounded-lg">
+      <div className="sm:flex items-center gap-3 px-3 h-[45px] hidden  md:w-[400px] bg-gray-200 dark:bg-[#191919] text-black dark:text-gray-300 rounded-lg">
         <Search size={18} />
 
         <input
@@ -109,17 +112,17 @@ const SideHeader = () => {
               className="size-10 md:size-11 object-center object-cover rounded-full border-[2px] border-[#9969C2]"
             />
 
-            <div className="space-y- text-[14px] hidden md:block">
+            <div className="dark:text-gray-300 text-black text-[14px] hidden md:block">
               <p>
                 <b>Mike Dean</b>
               </p>
               <p className="font-light">Vendor</p>
             </div>
 
-            <FaAngleDown size={18} />
+            <FaAngleDown className="text-black dark:text-gray-200" size={18} />
           </div>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-44 p-2 rounded-[10px] z-20 bg-[#191919]">
+        <DropdownMenuContent className="w-44 p-2 rounded-[10px] z-20 border bg-gray-200 text-black dark:text-white dark:border-none mt-2 border-gray-400 dark:bg-[#191919]">
           <DropdownMenuGroup>
             {dropData.map((el: iDropdown, i: number) => (
               <DropdownMenuItem

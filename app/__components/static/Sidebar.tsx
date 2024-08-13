@@ -26,9 +26,9 @@ const Sidebar: FC<iSidebar> = () => {
 
   return (
     <aside
-      className={`w-[260px] lg:block fixed h-screen duration-300 overflow-y-auto pb-5 left-0 hidden bg-white dark:text-black dark:bg-[#050505]`}
+      className={`w-[260px] lg:block border-r dark:border-r-0 fixed h-screen duration-300 overflow-y-auto pb-5 left-0 hidden bg-white text-gray-800 dark:bg-[#050505]`}
     >
-      <div className="w-full text-white h-[100px] flex items-center justify-center text-[24px] mb-4">
+      <div className="w-full font-bold dark:font-normal dark:text-white h-[100px] flex items-center justify-center text-[24px] mb-4">
         Smartwave
       </div>
 
@@ -40,7 +40,7 @@ const Sidebar: FC<iSidebar> = () => {
             className={`w-full  relative flex items-center font-light pl-8 text-[15px] cursor-pointer duration-300 gap-4 h-[50px] ${
               isActive(el.path!)
                 ? "bg-[#6E18BB] text-white"
-                : "text-[#B5B5B5] hover:text-white hover:bg-[#6E18BB]"
+                : "dark:text-[#B5B5B5] hover:text-white hover:bg-[#6E18BB]"
             }`}
           >
             {isActive(el.path!) && (

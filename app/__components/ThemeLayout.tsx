@@ -22,7 +22,7 @@ const ThemeLayout: FC<PropsWithChildren> = ({ children }) => {
       </div>
     );
 
-  return <main className={`${theme}`}>{children}</main>;
+  return <main className={`${theme} duration-300`}>{children}</main>;
 };
 
 export default ThemeLayout;
