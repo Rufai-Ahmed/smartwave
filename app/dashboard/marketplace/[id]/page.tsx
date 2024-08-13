@@ -25,28 +25,29 @@ const Page = () => {
         className="col-span-2 md:col-span-1 w-full h-auto"
       />
 
-      <div className="w-full col-span-2 md:col-span-1 justify-between space-y-3 xl:space-y-0 flex flex-col">
+      <div className="w-full text-black dark:text-white col-span-2 md:col-span-1 justify-between space-y-3 xl:space-y-0 flex flex-col">
         <p className="text-[18px]">
-          Name: <span className="font-medium text-white">{product?.name}</span>
+          Name:{" "}
+          <span className="font-medium dark:text-white">{product?.name}</span>
         </p>
 
         <p className="text-[18px]">
           Description:{" "}
-          <span className="font-medium text-white">{product?.desc}</span>
+          <span className="font-medium dark:text-white">{product?.desc}</span>
         </p>
 
         <p className="text-[18px]">
           Price:{" "}
-          <span className="font-medium text-white">{product?.price}</span>
+          <span className="font-medium dark:text-white">{product?.price}</span>
         </p>
         <p className="text-[18px]">
           Commission on Payment:{" "}
-          <span className="font-medium text-white">{product?.price}</span>
+          <span className="font-medium dark:text-white">{product?.price}</span>
         </p>
 
         <p className="text-[18px] flex gap-2">
           Review:{" "}
-          <span className="font-medium text-white flex items-center gap-1">
+          <span className="font-medium dark:text-white flex items-center gap-1">
             {Array.from({ length: 5 }).map((el: unknown, i: number) => (
               <BsStarFill
                 key={i}

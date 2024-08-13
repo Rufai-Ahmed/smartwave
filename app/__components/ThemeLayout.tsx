@@ -2,20 +2,19 @@
 import React, { FC, PropsWithChildren, useEffect, useState } from "react";
 
 const ThemeLayout: FC<PropsWithChildren> = ({ children }) => {
-  const [theme, setTheme] = useState<string>("light");
-  const [loading, setLoading] = useState<boolean>(false);
+  const [theme, setTheme] = useState<string>("dark");
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("theme")!);
-    // console.log("sacved", JSON.parse(localStorage.getItem("theme")!));
-    if (stored) {
-      setTheme(JSON.parse(localStorage.getItem("theme")!));
-    }
-    setLoading(true);
+    const storedTheme = localStorage.getItem("theme");
+    const initialTheme = storedTheme ? JSON.parse(storedTheme) : "dark";
+    setTheme(initialTheme);
+    !initialTheme && localStorage.setItem("theme", JSON.stringify("dark"))
+    document.documentElement.className = initialTheme; 
+    setLoading(false);
   }, []);
-  console.log(theme);
 
-  if (!loading)
+  if (loading)
     return (
       <div className="w-full h-screen bg-white flex items-center justify-center dark:bg-dark">
         <div className="loader"></div>

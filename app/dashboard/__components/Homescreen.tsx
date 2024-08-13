@@ -35,7 +35,7 @@ const Homescreen = () => {
             </Button>
           </div>
         </div>
-        <div className="min-h-[270px] grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 col-span-12 xl:col-span-8 gap-5">
+        <div className="min-h-[270px] grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 col-span-12 text-black dark:text-gray-200 xl:col-span-8 gap-5">
           {Array.from({ length: 6 }).map((el: unknown, i: number) => (
             <div
               key={i}
