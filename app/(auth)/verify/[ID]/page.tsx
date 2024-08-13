@@ -1,9 +1,6 @@
 "use client";
 import Button from "@/app/__components/Button";
-import {
-  InputOTP,
-  InputOTPSlot,
-} from "@/components/ui/input-otp";
+import { InputOTP, InputOTPSlot } from "@/components/ui/input-otp";
 import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +8,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <main className="items-start bg-white text-[#D9D9D9] dark:bg-dark grid grid-cols-2">
+    <main className="items-start bg-white text-gray-800 dark:text-[#D9D9D9] dark:bg-dark grid grid-cols-2">
       <Image
         className="h-screen hidden lg:block w-full object-cover"
         src={"/assets/images/money_girl.jpg"}
@@ -23,7 +20,7 @@ const page = () => {
 
       <div className="min-h-screen text-center col-span-2 lg:col-span-1 py-[5%] md:py-[10%] flex flex-col justify-between items-center">
         <div className="">
-          <p className="text-[30px] text-[#F2F2F2] md:text-[30px]">
+          <p className="text-[30px] text-gray-800 dark:text-[#F2F2F2] md:text-[30px]">
             Verify Your Account
           </p>
         </div>

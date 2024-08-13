@@ -5,7 +5,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <main className="items-start bg-white text-[#D9D9D9] dark:bg-dark grid grid-cols-2">
+    <main className="items-start bg-gray-50 dark:text-[#D9D9D9] dark:bg-dark text-black grid grid-cols-2">
       <Image
         className="h-screen hidden lg:block w-full object-cover"
         src={"/assets/images/money_girl.jpg"}
@@ -27,7 +27,7 @@ const page = () => {
               alt="Girl with cash"
               unoptimized
             />
-            <p className="text-[30px] text-[#F2F2F2] md:text-[60px]">
+            <p className="text-[30px] text-gray-900 dark:text-[#F2F2F2] md:text-[60px]">
               Smartwave
             </p>
           </div>

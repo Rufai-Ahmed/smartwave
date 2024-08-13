@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Local from "next/font/local";
 import "./globals.css";
+import ThemeLayout from "./__components/ThemeLayout";
 
 const aeonik = Local({
   src: [
@@ -28,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${aeonik.className} bg-[#0C0C0C]`}>{children}</body>
+      <body className={`${aeonik.className}`}>
+        <ThemeLayout>{children}</ThemeLayout>
+      </body>
     </html>
   );
 }
