@@ -67,7 +67,7 @@ const Homescreen = () => {
           ))}
         </div>
       </div>
-      <div className="grid mt-5 items-end grid-cols-1 gap-5 lg:grid-cols-3">
+      <div className="grid mt-10 items-end grid-cols-1 gap-5 lg:grid-cols-3">
         <QuickAction />
         <div className="col-span-3 xl:col-span-2 gap-4 items-end grid grid-cols-4 lg:grid-cols-2">
           <BestSelling

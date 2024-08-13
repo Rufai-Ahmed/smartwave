@@ -22,7 +22,7 @@ const Page = () => {
         height={100}
         unoptimized
         alt="Product image"
-        className="col-span-2 md:col-span-1 w-full h-auto"
+        className="col-span-2 md:col-span-1 w-full h-auto pb-10"
       />
 
       <div className="w-full text-black dark:text-white col-span-2 md:col-span-1 justify-between space-y-3 xl:space-y-0 flex flex-col">
@@ -65,7 +65,7 @@ const Page = () => {
               Buy Product
             </Button>
           </Link>
-          <Button className="bg-transparent text-[14px] md:text-[15px] h-auto hover:bg-zinc-950 duration-300 md:h-auto w-full 2xl:w-full md:w-full">
+          <Button className="bg-transparent text-[14px] md:text-[15px] h-auto hover:bg-zinc-950 duration-300 md:h-auto w-full text-black dark:text-white hover:text-white 2xl:w-full md:w-full">
             Lorem, ipsum.
           </Button>
         </div>
