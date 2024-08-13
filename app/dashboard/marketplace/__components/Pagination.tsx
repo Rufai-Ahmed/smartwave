@@ -23,7 +23,7 @@ const PaginationPage: FC<iPagination> = ({
   itemsPerPage,
 }) => {
   return (
-    <Pagination>
+    <Pagination className="text-black dark:text-gray-200">
       <PaginationContent>
         <PaginationItem>
           {currentPage! > 1 && (

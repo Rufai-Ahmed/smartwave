@@ -13,6 +13,11 @@ export interface iInput extends InputHTMLAttributes<HTMLInputElement> {
   bottomAction?: string | ReactNode;
 }
 
+export interface SideHeaderProps {
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
+}
+
 export interface iSidebar {
   name?: string;
   path?: string;

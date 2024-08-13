@@ -7,7 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { iDropdown, iSidebar } from "@/interfaces";
+import { iDropdown, iSidebar, SideHeaderProps } from "@/interfaces";
 import { dropData, sidebarData } from "@/lib/data/data";
 import {
   DropdownMenu,
@@ -24,30 +24,20 @@ import React, { useEffect, useState } from "react";
 import { BsPerson } from "react-icons/bs";
 import { FaAngleDown } from "react-icons/fa6";
 
-const SideHeader = () => {
+
+
+const SideHeader: React.FC<SideHeaderProps> = ({ theme, setTheme }) => {
   const path = usePathname();
   const isActive: (name: string) => boolean = (name: string) => name === path;
 
-  const [currentTheme, setCurrentTheme] = useState<string>("light");
-
-  const changeTheme = () => {
-    const newTheme = currentTheme === "light" ? "dark" : "light";
-    setCurrentTheme(newTheme);
-    localStorage.setItem("theme", JSON.stringify(newTheme));
-    document.documentElement.className = newTheme;
-  };
-
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme) {
-      const parsedTheme = JSON.parse(theme);
-      setCurrentTheme(parsedTheme);
-      document.documentElement.className = parsedTheme;
-    }
-  }, []);
+    const changeTheme = () => {
+      const newTheme = theme === "light" ? "dark" : "light";
+      setTheme(newTheme);
+      localStorage.setItem("theme", JSON.stringify(newTheme));
+    };
 
   return (
-    <header className="h-[60px] md:h-[90px] px-8 w-full border-b-[1px] dark:border-b-[2px] dark:border-[rgb(35,35,35)] border-gray-500 flex items-center justify-between">
+    <header className="h-[60px] sticky top-0 bg-white z-30 dark:bg-[#0C0C0C] md:h-[90px] px-8 w-full border-b-[1px] dark:border-b-[2px] dark:border-[rgb(35,35,35)] border-gray-500 flex items-center justify-between">
       <div className="lg:hidden flex items-center">
         <Sheet>
           <SheetTrigger asChild>
@@ -137,7 +127,7 @@ const SideHeader = () => {
               onClick={changeTheme}
               className="flex items-center py-2 px-2 cursor-pointer text-[14px] font-light hover:bg-[#6E18BB]  rounded-[10px] duration-300 gap-3"
             >
-              {currentTheme === "light" ? (
+              {theme === "light" ? (
                 <Moon size={17} />
               ) : (
                 <Sun size={17} />
