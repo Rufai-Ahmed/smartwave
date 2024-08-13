@@ -12,7 +12,7 @@ const Page = () => {
   const handleCategoryToggle = (category: string) => setState(category);
 
   return (
-    <main className="items-start text-[24px] bg-white text-[#D9D9D9] dark:bg-dark grid grid-cols-2">
+    <main className="items-start dark:text-[#D9D9D9] text-[24px] bg-white  dark:bg-dark grid grid-cols-2">
       <div className="col-span-1">
         <Image
           className="h-screen hidden fixed w-1/2 lg:block object-cover"
@@ -27,19 +27,19 @@ const Page = () => {
       <div className="flex flex-col items-center w-[100%] col-span-2 lg:col-span-1 py-[10%] min-h-screen text-center ">
         <div className="w-[90%] flex-col space-y-[4%] items-center">
           <div className="space-y- text-start">
-            <h2 className="font-bold text-[30px] text-[#F2F2F2]">Login</h2>
+            <h2 className="font-bold text-[30px] dark:text-[#D9D9D9]">Login</h2>
 
             <p>Log in to your account to continue</p>
           </div>
 
-          <div className="rounded-[8px] w-full p-2 bg-[#191919] items-center grid grid-cols-2">
+          <div className="rounded-[8px] w-full p-2 bg-gray-200 dark:bg-[#191919]  items-center grid grid-cols-2">
             {["Affliate", "Vendor"].map((el: string, i: number) => (
               <div
                 onClick={() => handleCategoryToggle(el)}
                 className={`${
                   el === state
-                    ? "bg-[#F2F2F2] text-[#191919] py-2 rounded-[6px]"
-                    : "text-white"
+                    ? "bg-white dark:bg-[#F2F2F2] border dark:border-none text-gray-800 dark:text-[#191919] py-2 rounded-[6px]"
+                    : "text-gray-800 dark:text-gray-100"
                 }  cursor-pointer`}
                 key={i}
               >

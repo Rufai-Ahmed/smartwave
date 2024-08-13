@@ -23,7 +23,7 @@ const Page = () => {
 
   return (
     <section>
-      <div className="grid lg:grid-cols-4 grid-cols-4 xl:col-span-4 gap-5">
+      <div className="grid xl:grid-cols-3 grid-cols-4 lg:grid-cols-4 xl:col-span-4 gap-5">
         {currentItems.map((_: iProduct, i: number) => (
           <Link
             className="col-span-4 md:col-span-2 xl:col-span-1 "

@@ -1,7 +1,4 @@
 "use client";
-import Button from "@/app/__components/Button";
-import Sidebar from "@/app/__components/static/Sidebar";
-import { DropdownMenuShortcut } from "@/components/ui/dropdown-menu";
 import {
   Sheet,
   SheetContent,
@@ -16,20 +13,14 @@ import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuSub,
-  DropdownMenuSubTrigger,
-  DropdownMenuPortal,
-  DropdownMenuSubContent,
 } from "@radix-ui/react-dropdown-menu";
-import { Menu, Search } from "lucide-react";
+import { Menu, Moon, Search, Sun } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsPerson } from "react-icons/bs";
 import { FaAngleDown } from "react-icons/fa6";
 
@@ -37,8 +28,26 @@ const SideHeader = () => {
   const path = usePathname();
   const isActive: (name: string) => boolean = (name: string) => name === path;
 
+  const [currentTheme, setCurrentTheme] = useState<string>("light");
+
+  const changeTheme = () => {
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    setCurrentTheme(newTheme);
+    localStorage.setItem("theme", JSON.stringify(newTheme));
+    document.documentElement.className = newTheme;
+  };
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme) {
+      const parsedTheme = JSON.parse(theme);
+      setCurrentTheme(parsedTheme);
+      document.documentElement.className = parsedTheme;
+    }
+  }, []);
+
   return (
-    <header className="h-[60px] md:h-[90px] px-8 w-full border-b-[2px] border-[rgb(35,35,35)] flex items-center justify-between">
+    <header className="h-[60px] md:h-[90px] px-8 w-full border-b-[2px] border-[rgb(35,35,35)] dark:border-gray-500 flex items-center justify-between">
       <div className="lg:hidden flex items-center">
         <Sheet>
           <SheetTrigger asChild>
@@ -121,6 +130,17 @@ const SideHeader = () => {
                 {el.label}
               </DropdownMenuItem>
             ))}
+            <DropdownMenuItem
+              onClick={changeTheme}
+              className="flex items-center py-2 px-2 cursor-pointer text-[14px] font-light hover:bg-[#6E18BB]  rounded-[10px] duration-300 gap-3"
+            >
+              {currentTheme === "light" ? (
+                <Moon size={17} />
+              ) : (
+                <Sun size={17} />
+              )}
+              Switch Mode
+            </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>

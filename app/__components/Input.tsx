@@ -17,14 +17,14 @@ const Input: FC<iInput> = ({
 
   return (
     <div className="space-y-2">
-      <label>{label}</label>
-      <div className="relative flex items-center w-full border-[2px] rounded-[8px] border-[#232323] bg-[#191919] font-light pr-3 gap-3">
+      <label className="text-gray-800 dark:text-gray-200">{label}</label>
+      <div className="relative flex items-center w-full border-[2px] rounded-[8px] border-gray-400 dark:border-[#232323] bg-gray-200 dark:bg-[#191919] font-light pr-3 gap-3">
         <input
           type={name === "password" && !state ? "text" : type}
           name={name}
           placeholder={placeholder}
           className={twMerge(
-            "bg-transparent flex-grow outline-none pl-5 placeholder:text-[#D9D9D9] h-[60px] md:h-[70px]",
+            "bg-transparent flex-grow outline-none pl-5 placeholder:text-[#191919] dark:placeholder:text-[#D9D9D9] h-[60px] md:h-[70px]",
             className
           )}
         />

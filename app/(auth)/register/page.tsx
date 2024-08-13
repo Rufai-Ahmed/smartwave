@@ -27,22 +27,22 @@ const Page = () => {
 
       <div className="flex flex-col items-center w-[100%] col-span-2 lg:col-span-1 py-[10%] min-h-screen text-center ">
         <div className="w-[90%] flex-col space-y-[4%] items-center">
-          <div className="text-[#D9D9D9] text-start">
-            <h2 className="font-bold text-[30px] text-[#F2F2F2]">
+          <div className="dark:text-[#D9D9D9] text-start">
+            <h2 className="font-bold text-[30px] dark:text-[#F2F2F2]">
               Create an account
             </h2>
 
             <p>Fill in these details to get started</p>
           </div>
 
-          <div className="rounded-[8px] w-full p-2 bg-[#191919] items-center grid grid-cols-2">
+          <div className="rounded-[8px] w-full p-2 bg-gray-200 dark:bg-[#191919] items-center grid grid-cols-2">
             {["Affiliate", "Vendor"].map((el: string, i: number) => (
               <div
                 onClick={() => handleCategoryToggle(el)}
                 className={`${
                   el === state
-                    ? "bg-[#F2F2F2] text-[#191919] py-2 rounded-[6px]"
-                    : "text-white"
+                    ? "dark:bg-[#F2F2F2] border dark:border-none bg-white text-gray-800 dark:text-[#191919] py-2 rounded-[6px]"
+                    : "text-gray-800 dark:text-gray-100"
                 }  cursor-pointer`}
                 key={i}
               >
@@ -51,11 +51,11 @@ const Page = () => {
             ))}
           </div>
 
-          <div className="space-y-7 text-[#D9D9D9] text-start">
+          <div className="space-y-7 dark:text-[#D9D9D9] text-start">
             {registerInput.map((el: iInput, i: number) => (
               <Input {...el} key={i} />
             ))}
-            <div className="flex items-start mt-4 text-[#B5B5B5] font-light gap-x-3">
+            <div className="flex items-start mt-4 text-gray-800 dark:text-[#B5B5B5] font-light gap-x-3">
               <input
                 type="checkbox"
                 name="policy"
@@ -64,23 +64,26 @@ const Page = () => {
 
               <p>
                 By signing up, you agree to our{" "}
-                <span className="font-bold text-white">
+                <span className="font-bold dark:text-white text-black">
                   Terms and Conditions
                 </span>{" "}
-                and <span className="font-bold text-white">Privacy Policy</span>
+                and{" "}
+                <span className="font-bold dark:text-white text-black">
+                  Privacy Policy
+                </span>
                 . Please read them carefully.
               </p>
             </div>
           </div>
 
           <div className="space-y-3 w-full flex flex-col items-center text-[#D9D9D9] text-[24px]">
-            <Link href={"/login"} className="w-full flex justify-center">
+            <Link href={"/verify/id"} className="w-full flex justify-center">
               <Button className="w-full md:w-full lg:w-full 2xl:w-full">
                 {" "}
                 Create Account
               </Button>
             </Link>
-            <p>
+            <p className="dark:text-gray-500 text-black">
               Already have an account?{" "}
               <Link href={"/login"} className="text-[#8C29E4]">
                 Login
