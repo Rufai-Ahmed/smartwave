@@ -37,7 +37,9 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
     );
 
   return (
-    <div className={`flex w-full items-start justify-end ${theme}`}>
+    <div
+      className={`flex w-full items-start duration-300 justify-end ${theme}`}
+    >
       <Sidebar />
 
       <div className="w-full lg:w-[calc(100%-260px)] min-h-screen text-[#F2F2F2] bg-white dark:bg-[#0C0C0C]">

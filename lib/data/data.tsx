@@ -189,10 +189,10 @@ export const headingData: iHeading[] = [
     b: "Overview",
     p: "Winners Mike",
     rightComp: (
-      <div className="px-4 font-light py-2 bg-[#191919] flex items-center gap-3 rounded-md cursor-pointer">
+      <div className="px-4 font-light py-2 bg-gray-200 dark:bg-[#191919] flex items-center gap-3 rounded-md cursor-pointer">
         <Hand size={18} />
 
-        <p className="hidden md:block">View in Light Mode</p>
+        <p className="hidden md:block">Lorem ipsum dolor sit.</p>
       </div>
     ),
   },
