@@ -20,7 +20,7 @@ const page = () => {
 
       <div className="min-h-screen w-full text-center col-span-2 lg:col-span-1 flex items-center justify-center">
         <div className="space-y-8 flex flex-col justify-center items-center min-h-screen w-[90%]">
-          <div className="w-full p-5 bg-[#191919] h-[70%] rounded-[8px]">
+          <div className="w-full p-5 bg-gray-200 text-black dark:text-white dark:bg-[#191919] h-[70%] rounded-[8px]">
             <div className="w-full text-[20px] py-4 bg-gradient-to-r from-[#892DFC] text-white border-[2px] rounded-[10px] to-[#A668F4] text-center">
               <p>
                 A sign up subscription is required to complete registration.
@@ -37,7 +37,7 @@ const page = () => {
                 <div key={i} className="flex items-center gap-5">
                   <BsStarFill size={20} color="#F29F05" />
 
-                  <p className="text-[19px] text-start text-[#F2F2F2]"> {el}</p>
+                  <p className="text-[19px] text-start dark:text-[#F2F2F2]"> {el}</p>
                 </div>
               ))}
             </div>

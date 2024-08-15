@@ -6,7 +6,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { iDropdown, iHeading, iInput, iProduct, iSidebar } from "@/interfaces";
+import {
+  iDropdown,
+  iHeading,
+  iInput,
+  iProduct,
+  iReview,
+  iSidebar,
+} from "@/interfaces";
 import {
   Download,
   Gamepad2,
@@ -241,3 +248,26 @@ export const mainObject: iProduct = {
 };
 
 export const items: any[] = Array(20).fill(mainObject);
+
+export const reviewData: iReview[] = [
+  {
+    left: "Product Name",
+    right: "Different Winter",
+  },
+  {
+    left: "Category",
+    right: "Mike Dillan",
+  },
+  {
+    left: "Product Type",
+    right: "Book",
+  },
+  {
+    left: "Email",
+    right: "user@gmail.com",
+  },
+  {
+    left: "Phone Number",
+    right: "07085742642",
+  },
+];
