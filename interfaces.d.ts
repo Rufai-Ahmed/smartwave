@@ -49,3 +49,8 @@ export interface iProduct {
   commission?: string;
   star?: number;
 }
+
+export interface iReview {
+  left?: string;
+  right?: string;
+}
