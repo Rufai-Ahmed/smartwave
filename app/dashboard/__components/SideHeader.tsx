@@ -23,7 +23,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { BsPerson } from "react-icons/bs";
 import { FaAngleDown } from "react-icons/fa6";
 
 const SideHeader: React.FC<SideHeaderProps> = ({ theme, setTheme }) => {
@@ -55,7 +54,7 @@ const SideHeader: React.FC<SideHeaderProps> = ({ theme, setTheme }) => {
               <SheetDescription></SheetDescription>
             </SheetHeader>
 
-            <SheetFooter className="space-y-3 w-full">
+            <SheetFooter className="space-y-3 flex-col-reverse flex w-full">
               {sidebarData.reverse().map((el: iSidebar, i: number) => (
                 <SheetClose key={i} className="w-full" asChild>
                   <Link
