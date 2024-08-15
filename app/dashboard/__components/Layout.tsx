@@ -1,5 +1,5 @@
 "use client";
-import Sidebar from "@/app/__components/static/Sidebar";
+import Sidebar from "@/app/dashboard/__components/static/Sidebar";
 import React, { FC, PropsWithChildren, useEffect, useState } from "react";
 import SideHeader from "./SideHeader";
 import Heading from "./Heading";

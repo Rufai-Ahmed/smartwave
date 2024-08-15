@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Local from "next/font/local";
 import "../globals.css";
-import Sidebar from "../__components/static/Sidebar";
+import Sidebar from "./__components/static/Sidebar";
 import Layout from "./__components/Layout";
 
 const aeonik = Local({

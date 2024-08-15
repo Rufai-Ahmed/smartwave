@@ -55,7 +55,7 @@ const SideHeader: React.FC<SideHeaderProps> = ({ theme, setTheme }) => {
             </SheetHeader>
 
             <SheetFooter className="space-y-3 flex-col flex  w-full">
-              {sidebarData.reverse().map((el: iSidebar, i: number) => (
+              {sidebarData.map((el: iSidebar, i: number) => (
                 <SheetClose key={i} className="w-full" asChild>
                   <Link
                     href={el.path!}
