@@ -2,6 +2,7 @@ import Button from "@/app/__components/Button";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import { Download } from "lucide-react";
 
 const page = () => {
   return (
@@ -21,9 +22,10 @@ const page = () => {
                 </p>
               </div>
 
-              <Link href={"/dashboard"} className="w-full flex justify-center">
-                <Button className="w-[80%] md:w-[calc(100%-40px)] lg:w-[calc(100%-40px)] 2xl:w-[calc(100%-40px)] md:text-[20px] md:h-[50px]">
-                  Go to dashboard
+              <Link href={"success/download"} className="w-full flex justify-center">
+                <Button className="w-[80%] md:w-[calc(100%-40px)] lg:w-[calc(100%-40px)] 2xl:w-[calc(100%-40px)] gap-4 md:text-[20px] md:h-[50px]">
+    <Download size={17} />
+                 Download Product
                 </Button>
               </Link>
             </div>

@@ -35,7 +35,7 @@ const page = () => {
 
               <Link href={"/dashboard"} className="w-full flex justify-center">
                 <Button className="w-[80%] md:w-[calc(100%-40px)] lg:w-[calc(100%-40px)] 2xl:w-[calc(100%-40px)] md:text-[20px] md:h-[50px]">
-                 Download Product
+                  Go to dashboard
                 </Button>
               </Link>
             </div>
